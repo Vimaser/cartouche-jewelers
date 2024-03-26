@@ -1,6 +1,6 @@
 import React from 'react';
-import AddProductForm from './AddProductForm'; // Assume this is a component for adding products
-import ProductList from './ProductList'; // Assume this is a component for listing and managing products
+import AddProductForm from './AddProductForm';
+import ProductList from './ProductList';
 
 const AdminPage = () => {
   return (
@@ -8,7 +8,7 @@ const AdminPage = () => {
       <h1>Admin Dashboard</h1>
       <nav>
         {/* Navigation Menu */}
-        {/* Add links or buttons for navigation if needed */}
+        {/* Add links or buttons for navigation AS needed */}
       </nav>
       
       <AddProductForm />

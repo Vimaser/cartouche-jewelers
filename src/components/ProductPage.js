@@ -1,34 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getProducts } from "./ProductService";
-import ReactImageMagnify from "react-image-magnify";
 import "./css/ProductPage.css";
 
 const ProductPage = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
-  const [largeImageSize, setLargeImageSize] = useState({
-    width: 1200,
-    height: 1800,
-  });
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const products = await getProducts();
-        // Find the specific product in the array
         const specificProduct = products.find((p) => p.id === productId);
         setProduct(specificProduct);
-
-        // Dynamically set large image size based on the actual image dimensions
-        const img = new Image();
-        img.src = specificProduct.imageUrl;
-        img.onload = () => {
-          setLargeImageSize({
-            width: img.naturalWidth,
-            height: img.naturalHeight,
-          });
-        };
       } catch (error) {
         console.error("Error fetching product details:", error);
       }
@@ -52,19 +36,10 @@ const ProductPage = () => {
     <div className="product-page-background-image">
       <div className="product-page">
         <div className="product-image-container">
-          <ReactImageMagnify
-            {...{
-              smallImage: {
-                alt: product.name,
-                isFluidWidth: true,
-                src: product.imageUrl,
-              },
-              largeImage: {
-                src: product.imageUrl,
-                ...largeImageSize,
-              },
-              enlargedImagePosition: "over",
-            }}
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className="product-image"
           />
         </div>
         <div className="product-details">
@@ -72,12 +47,11 @@ const ProductPage = () => {
           <p>{product.description}</p>
           <p>Price: {renderPrice()}</p>
           <p>Category: {product.category}</p>
-          <p>Brand: {product.brand}</p> 
+          <p>Brand: {product.brand}</p>
           <Link to="/explore" className="return-now-btn">
-          Explore More
-        </Link>
+            Explore More
+          </Link>
         </div>
-       
       </div>
     </div>
   );

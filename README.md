@@ -60,3 +60,10 @@ Normalization vs. Denormalization: Firestore is a NoSQL database, so consider de
 Indexes: Create indexes for commonly queried fields to improve query performance.
 Security: Secure access to data and images using Firestore Security Rules and Firebase Storage Security Rules.
 Scalability: Plan for scaling by optimizing data structures, queries, and indexes.
+
+
+# Dev Notes -
+
+Tuesday March 26th, 2024 -
+
+Still a lot of work to go, pulled from previous projects to meet time constraints. Also doing the UI/UX and Graphic Arts myself... Client decided against going with e-commerce, still developed in mind incase they ever change there mind. Still a lot of work to go, should be good enough to let them view. 
