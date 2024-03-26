@@ -1,0 +1,61 @@
+.featured-products-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.featured-products-container h2 {
+    color: #FFFDD0;
+}
+
+.swiper-container {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* Ensuring enough space for 3 square cards */
+    max-width: 750px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.swiper-pagination-bullet {
+    background: #007bff;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+/* Swiper navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #007bff;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+
+}

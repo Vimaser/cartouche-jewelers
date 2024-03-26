@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 60px);
+}
+
+.call-to-action h2, .call-to-action p {
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+}
+
+section {
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+iframe {
+    max-width: 100%;
+    border: none;
+}
+
+@keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+  
+.image-section-spin img {
+    animation: rotateAnimation 10s linear infinite;
+}
+
+.image-section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0%;
+}
+
+.box {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    background-color: lightgrey;
+}
+
+.image-section img {
+    max-height: 60vh;
+    width: auto;
+    border-radius: 10px;
+}
+
+.shop-now-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now-btn:hover,
+.shop-now-btn:focus {
+    background-color: #0056b3;
+    color: #fff;
+    text-decoration: none;
+}
+
+.home-background-image {
+    background: url('./leather2.png') center/cover no-repeat fixed,
+                linear-gradient(to right, black, gray);
+    min-height: 100vh;
+    width: 100%;
+}
+
+.facebook-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.facebook-container iframe {
+    max-width: 100%;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+    .home-background-image {
+        background-position: top center;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-background-image {
+        background-position: center;
+    }
+    .image-section {
+        padding-top: 20px;
+    }
+    .facebook-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+}

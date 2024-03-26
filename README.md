@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Carmouche Jewelers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Client was unsatisfied by prior service from competetor. Looking to improve design. No longer wants e-commernce due to lack of e-sales. Wants an updated layout and the ability to display products. Design philosophy is to develop e-commerce but not intergrate it functionally unless the client ever changes their mind. Personally thinking to just have the same layout, but minor adjustments to the backend if the customer or I ever want to update it later or another coder works on the project in the future (easier for everyone involved). Using a previous project as a template/skeleton to build off of for time constraints. 
 
-## Available Scripts
+# BackEnd Schema
 
-In the project directory, you can run:
+Main Collections
+Products
 
-### `npm start`
+Collection: products
+Document: {product_id} (unique identifier for each product)
+Fields:
+name: string (name of the product)
+category: string (e.g., "Rings", "Necklaces")
+designer: string (optional, name of the designer)
+price: number (price of the product)
+description: string (description of the product)
+imageUrls: array of strings (URLs of product images stored in Firebase Storage)
+featured: boolean (true if it's a featured product)
+newArrival: boolean (true if it's a new arrival)
+onSale: boolean (true if it's on sale)
+tags: array of strings (useful for search and categorization)
+details: map/object (additional details like material, size, color, etc.)
+Categories
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Collection: categories
+Document: {category_name} (e.g., "Rings", "Necklaces")
+Fields:
+description: string (description of the category)
+featuredImageUrl: string (URL of an image representing the category, stored in Firebase Storage)
+Designers
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Collection: designers
+Document: {designer_name}
+Fields:
+bio: string (biography or description of the designer)
+featuredImageUrl: string (URL of an image representing the designer, stored in Firebase Storage)
+Orders (if managing orders through Firestore)
 
-### `npm test`
+Collection: orders
+Document: {order_id}
+Fields:
+customer_id: string
+products: array of maps/objects (product_id, quantity, price)
+totalPrice: number
+orderDate: timestamp
+status: string (e.g., "processing", "shipped")
+Users (if managing user accounts)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Collection: users
+Document: {user_id}
+Fields:
+name: string
+email: string
+address: map/object (street, city, state, zip)
+orderIds: array of strings (order_ids)
+Design Considerations
+Image Storage: Images are stored in Firebase Storage. Store the URL references in Firestore for easy retrieval.
+Normalization vs. Denormalization: Firestore is a NoSQL database, so consider denormalizing data for more efficient querying, while maintaining data integrity.
+Indexes: Create indexes for commonly queried fields to improve query performance.
+Security: Secure access to data and images using Firestore Security Rules and Firebase Storage Security Rules.
+Scalability: Plan for scaling by optimizing data structures, queries, and indexes.
