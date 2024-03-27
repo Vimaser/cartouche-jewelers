@@ -6,10 +6,8 @@ import "./css/About.css";
 function About() {
   return (
     <div className="about-background-image">
-      <div className="about-container mt-5">
+      <div className="about-container">
         <h1>Carmouche Jewelers</h1>
-        <section className="image-section image-section-spin">
-        </section>
         <p>
           Since our establishment in 1979, Carmouche Jewelers has been committed
           to providing unparalleled customer service. Our journey began with a

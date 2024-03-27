@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import loadingGif from "./img/CARMOUCHE.gif";
 import {
   BrowserRouter as Router,
   Route,
@@ -92,6 +93,24 @@ const AppContent = () => {
 };
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loading-container">
+        <img src={loadingGif} alt="Loading..." />
+      </div>
+    );
+  }
+
   return (
     <Router>
       <EventsProvider>
