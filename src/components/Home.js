@@ -13,15 +13,15 @@ import "./css/Home.css";
 const Home = () => {
   return (
     <div className="home-background-image">
-      <div className="container mt-5">
+      <div className="container">
         <HeroSection />
       </div>
 
-      <div className="container mt-5">
+      <div className="container">
         <FeaturedProducts />
       </div>
 
-      <div className="container mt-5">
+      <div className="container">
         <CategoryOverview />
       </div>
 

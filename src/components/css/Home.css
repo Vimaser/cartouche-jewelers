@@ -109,6 +109,7 @@ iframe {
 .home-background-image {
     background: url('./leather2.png') center/cover no-repeat fixed,
                 linear-gradient(to right, black, gray);
+    background-position: center top;
     min-height: 100vh;
     width: 100%;
 }

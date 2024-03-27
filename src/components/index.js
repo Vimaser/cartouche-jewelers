@@ -15,4 +15,3 @@ export { default as ProductPage } from "./ProductPage"
 export { default as Explore } from "./Explore"
 export { default as FacebookPage } from "./FacebookPage"
 export { default as GoogleMaps } from "./GoogleMaps"
-

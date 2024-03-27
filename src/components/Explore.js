@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { getProducts } from "./ProductService";
+import { Dropdown } from "react-bootstrap";
 import "./css/Explore.css";
 
 const priceRanges = {
@@ -8,10 +9,10 @@ const priceRanges = {
   "Under 100": (product) => product.price < 100,
   "100 - 500": (product) => product.price >= 100 && product.price <= 500,
   "Over 500": (product) => product.price > 500,
-  // Add more ranges as needed
 };
 
 const useQuery = () => new URLSearchParams(useLocation().search);
+
 
 const Explore = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -24,7 +25,7 @@ const Explore = () => {
   const productsPerPage = 12;
 
   const query = useQuery();
-  const queryCategory = query.get('category');
+  const queryCategory = query.get("category");
 
   useEffect(() => {
     if (queryCategory) {
@@ -32,11 +33,11 @@ const Explore = () => {
     }
   }, [queryCategory]);
 
-
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const fetchedProducts = await getProducts();
+        console.log("Fetched Products:", fetchedProducts);
         setAllProducts(fetchedProducts.sort((a, b) => b.price - a.price));
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -48,6 +49,7 @@ const Explore = () => {
 
   useEffect(() => {
     let productsToDisplay = [...allProducts];
+    console.log("Initial Products to Display:", productsToDisplay);
 
     // Apply search filter
     if (searchTerm) {
@@ -74,6 +76,7 @@ const Explore = () => {
     const priceFilterFunc = priceRanges[priceFilter];
     productsToDisplay = productsToDisplay.filter(priceFilterFunc);
 
+    console.log("Filtered Products to Display:", productsToDisplay);
     setDisplayedProducts(productsToDisplay);
   }, [allProducts, categoryFilter, brandFilter, priceFilter, searchTerm]);
 
@@ -110,6 +113,19 @@ const Explore = () => {
       ? "Call Store For Price"
       : `$${price.toFixed(2)}`;
   };
+
+  const handleBootstrapSelect = (value) => {
+    console.log("Dropdown Selected:", value);
+    setCategoryFilter(value);
+  };
+
+  useEffect(() => {
+    console.log("Category Filter:", categoryFilter);
+    console.log("Brand Filter:", brandFilter);
+    console.log("Price Filter:", priceFilter);
+    console.log("Search Term:", searchTerm);
+  }, [categoryFilter, brandFilter, priceFilter, searchTerm]);
+  
 
   return (
     <div className="explore-background-image">
@@ -164,6 +180,47 @@ const Explore = () => {
             <option value="Over 500">Over $500</option>
           </select>
         </div>
+
+        {/* Bootstrap dropdowns for mobile still not working :/ */}
+        <Dropdown className="filter-dropdown-mobile">
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            {categoryFilter}
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item onSelect={() => handleBootstrapSelect("All")}>
+              All
+            </Dropdown.Item>
+            <Dropdown.Item
+              onSelect={() => handleBootstrapSelect("Engagement Rings")}
+            >
+              Engagement Rings
+            </Dropdown.Item>
+            <Dropdown.Item
+              onSelect={() => handleBootstrapSelect("Men's Wedding Bands")}
+            >
+              Men's Wedding Bands
+            </Dropdown.Item>
+            <Dropdown.Item
+              onSelect={() => handleBootstrapSelect("Women's Wedding Bands")}
+            >
+              Women's Wedding Bands
+            </Dropdown.Item>
+            <Dropdown.Item
+              onSelect={() => handleBootstrapSelect("Gold Jewelry")}
+            >
+              Gold Jewelry
+            </Dropdown.Item>
+            <Dropdown.Item
+              onSelect={() => handleBootstrapSelect("Sterling Silver")}
+            >
+              Sterling Silver
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={() => handleBootstrapSelect("Watches")}>
+              Watches
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
 
         <div className="product-grid">
           {currentProducts.length > 0 ? (

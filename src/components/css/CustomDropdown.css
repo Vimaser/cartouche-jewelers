@@ -1,0 +1,33 @@
+.custom-dropdown {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .dropdown-label {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .dropdown-options {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .dropdown-option {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .dropdown-option:first-child {
+    border-top: none;
+  }
+  
+  .dropdown-option:hover {
+    background-color: #f0f0f0;
+  }
+  

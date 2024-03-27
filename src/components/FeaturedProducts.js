@@ -28,16 +28,16 @@ const FeaturedProducts = () => {
         spaceBetween={50}
         navigation
         pagination={{ clickable: true }}
-        slidesPerView={products.length >= 3 ? 3 : 1}
-        centeredSlides={products.length < 3} // Center the slide if less than 3 products
+        slidesPerView={1}
+        centeredSlides={true}
         breakpoints={{
           768: {
-            slidesPerView: products.length >= 2 ? 2 : 1, // Adjust for medium screens
-            centeredSlides: products.length < 2,
+            slidesPerView: 2,
+            centeredSlides: false,
           },
           1200: {
-            slidesPerView: products.length >= 3 ? 3 : 1, // Adjust for larger screens
-            centeredSlides: products.length < 3,
+            slidesPerView: 3,
+            centeredSlides: false,
           },
         }}
       >

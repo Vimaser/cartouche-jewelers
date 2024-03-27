@@ -149,10 +149,14 @@
     background-color: #2a3542;
     font-weight: bold;
   }
+
+  .filter-dropdown-mobile {
+    display: none;
+  }
   
   
   /* Smaller Mobile Devices */
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 768px) {
     .explore-header h2 {
       font-size: 1.75rem;
     }
@@ -180,4 +184,17 @@
       .pagination button {
         margin-bottom: 10px;
       }
+      .filter-select-desktop {
+        display: none;
+      }
+    
+      .filter-dropdown-mobile {
+        display: block;
+      }
+      .filter-dropdown-mobile {
+        display: none;
+      }
+   /*    .filter-container {
+        display: none;
+      } */
   }
