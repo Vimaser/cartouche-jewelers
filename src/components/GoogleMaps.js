@@ -1,4 +1,6 @@
 import React from 'react';
+import './css/GoogleMaps.css';
+
 
 const GoogleMaps = () => {
   const latitude = 30.086532686055403;
