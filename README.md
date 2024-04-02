@@ -12,3 +12,7 @@ Still a lot of work to go, pulled from previous projects to meet time constraint
 Wednesday March 27th, 2024 -
 
 Minor CSS and mobile compatiablity issues. Used bootstrap for temp trouble shooting. Lots of console logs... Still a lot of clean up needs to be done. Functional and pretty though (the site, my code is ugly). Might add a loading logo to home since there's so many mp4's on launch.
+
+SAT March 30th, 2024 - 
+
+Looking at this and my previous sites, it's cool to see the improvements I made.
