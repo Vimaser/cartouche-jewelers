@@ -36,11 +36,13 @@ const ProductPage = () => {
     <div className="product-page-background-image">
       <div className="product-page">
         <div className="product-image-container">
-          <img
-            src={product.imageUrl}
-            alt={product.name}
-            className="product-image"
-          />
+          <a href={product.imageUrl} target="_blank" rel="noopener noreferrer">
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className="product-image"
+            />
+          </a>
         </div>
         <div className="product-details">
           <h1>{product.name}</h1>
