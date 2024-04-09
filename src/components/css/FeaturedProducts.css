@@ -3,8 +3,8 @@
     padding: 20px;
 }
 
-.featured-products-container h2 {
-    color: #FFFDD0;
+.featured-products-container h2, .featured-products-container p  {
+    color: #7a0303cc;
 }
 
 .swiper-container {

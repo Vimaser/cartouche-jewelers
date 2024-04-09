@@ -107,7 +107,7 @@ iframe {
 }
 
 .home-background-image {
-    background: url('./leather2.png') center/cover no-repeat fixed,
+    background: url('./flat.png') center/cover no-repeat fixed,
                 linear-gradient(to right, black, gray);
     background-position: center top;
     min-height: 100vh;
@@ -128,6 +128,15 @@ iframe {
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
+
+.banner-breaker {
+    width: 100%;
+    height: 200px;
+    max-height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
 
 /* Responsive adjustments */
 @media (min-width: 1024px) {

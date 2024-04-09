@@ -8,11 +8,13 @@ import CategoryOverview from "./CategoryOverview";
 import Footer from "./Footer";
 import FacebookPage from "./FacebookPage";
 import GoogleMaps from "./GoogleMaps";
+import img from "../img/breaker.png"
 import "./css/Home.css";
 
 const Home = () => {
   return (
     <div className="home-background-image">
+      <img src={img} alt='banner breaker' className='banner-breaker'/>
       <div className="container">
         <HeroSection />
       </div>

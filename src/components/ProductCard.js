@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import "./css/ProductCard.css";
 
 const ProductCard = ({ product }) => {
-
   const renderPrice = () => {
     // Check if price is 0 or 0.00 and display 'Call Store For Price' in that case
     return product.price === 0 || parseFloat(product.price).toFixed(2) === '0' || ''
@@ -22,8 +21,8 @@ const ProductCard = ({ product }) => {
         />
       )}
       <div className="product-info">
-        <h3 style={{ color: "#FFFDD0" }}>{product.name}</h3>
-        <p className="product-price" style={{ color: "#FFFDD0" }}>
+        <h3 style={{ color: "#7a0303cc" }}>{product.name}</h3> {/* Updated color */}
+        <p className="product-price" style={{ color: "#7a0303cc" }}> {/* Updated color */}
           {renderPrice()}
         </p>
         <Link to={`/product/${product.id}`} style={{ textDecoration: 'none' }}>

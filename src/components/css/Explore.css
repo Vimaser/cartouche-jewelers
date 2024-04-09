@@ -11,7 +11,7 @@
   
   .explore-header h2 {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: #7a0303cc;
     margin-bottom: 10px;
   }
   
@@ -82,7 +82,7 @@
 
   .explore-background-image {
     background-image: linear-gradient(to right, black , gray); 
-    background-image: url('./leather2.png');
+    background-image: url('./flat.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

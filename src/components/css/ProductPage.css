@@ -71,8 +71,8 @@
 }
 
 .product-page-background-image {
-  background-image: linear-gradient(to right, black, gray), url('./blue.png');
-  background-image: url('./blue.png');
+  background-image: linear-gradient(to right, black, gray), url('./flat.png');
+  background-image: url('./flat.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
