@@ -8,24 +8,27 @@ import CategoryOverview from "./CategoryOverview";
 import Footer from "./Footer";
 import FacebookPage from "./FacebookPage";
 import GoogleMaps from "./GoogleMaps";
-import img from "../img/breaker.png"
+import img from "../img/breaker.png";
 import "./css/Home.css";
 
 const Home = () => {
   return (
     <div className="home-background-image">
-      <img src={img} alt='banner breaker' className='banner-breaker'/>
+      <img src={img} alt="banner breaker" className="banner-breaker" />
       <div className="container">
         <HeroSection />
       </div>
+      <img src={img} alt="banner breaker" className="banner-breaker" />
 
       <div className="container">
         <FeaturedProducts />
       </div>
+      <img src={img} alt="banner breaker" className="banner-breaker" />
 
       <div className="container">
         <CategoryOverview />
       </div>
+      <img src={img} alt="banner breaker" className="banner-breaker" />
 
       <div className="facebook-container">
         <FacebookPage
@@ -34,6 +37,7 @@ const Home = () => {
           height="500"
         />
       </div>
+      <img src={img} alt="banner breaker" className="banner-breaker" />
 
       {/*       <div className="home-background-image">
         <div className="container mt-5">
@@ -61,7 +65,7 @@ const Home = () => {
           </div>
         </div>
       </div> */}
-      <GoogleMaps/>
+      <GoogleMaps />
       <Footer />
     </div>
   );
